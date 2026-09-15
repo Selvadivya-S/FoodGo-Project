@@ -1,0 +1,542 @@
+.app {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.main-content {
+  min-height: calc(100vh - 76px);
+}
+
+.not-found-page {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #fff8f4, #fff);
+}
+
+.not-found-content {
+  text-align: center;
+}
+
+.not-found-number {
+  display: block;
+  font-size: clamp(80px, 16vw, 180px);
+  font-weight: 900;
+  line-height: 1;
+  color: #ff5a1f;
+}
+
+.not-found-content h1 {
+  margin: 15px 0 8px;
+  font-size: 32px;
+}
+
+.not-found-content p {
+  color: #667085;
+  margin-bottom: 25px;
+}
+
+.not-found-content a {
+  display: inline-flex;
+  padding: 13px 22px;
+  border-radius: 12px;
+  background: #ff5a1f;
+  color: white;
+  font-weight: 700;
+}
+
+/* Account Section */
+
+.fg-account-section {
+  padding: 30px 0 10px;
+}
+
+.fg-account-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 28px 32px;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(248, 250, 252, 0.96)
+  );
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.07);
+}
+
+.fg-account-card::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  right: -70px;
+  top: -80px;
+  border-radius: 50%;
+  background: rgba(255, 82, 82, 0.08);
+}
+
+.fg-account-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+  z-index: 2;
+}
+
+.fg-account-icon,
+.fg-user-avatar {
+  width: 62px;
+  height: 62px;
+  min-width: 62px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff512f, #f09819);
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 10px 25px rgba(255, 81, 47, 0.22);
+}
+
+.fg-user-avatar {
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.fg-account-card h2 {
+  margin: 4px 0 7px;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #111827;
+}
+
+.fg-account-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.fg-account-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Account Buttons */
+
+.fg-account-login-btn,
+.fg-account-register-btn,
+.fg-account-logout-btn {
+  height: 46px;
+  padding: 0 20px;
+  border-radius: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.fg-account-login-btn {
+  border: none;
+  color: white;
+  background: linear-gradient(135deg, #ff512f, #f09819);
+  box-shadow: 0 8px 20px rgba(255, 81, 47, 0.2);
+}
+
+.fg-account-register-btn {
+  color: #111827;
+  background: white;
+  border: 1px solid #e5e7eb;
+}
+
+.fg-account-logout-btn {
+  border: 1px solid #fee2e2;
+  color: #dc2626;
+  background: #fff7f7;
+}
+
+.fg-account-login-btn:hover,
+.fg-account-register-btn:hover,
+.fg-account-logout-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Login Modal */
+
+.fg-login-modal {
+  width: min(460px, calc(100vw - 30px));
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 34px;
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.22);
+  animation: fgLoginModalIn 0.25s ease;
+}
+
+@keyframes fgLoginModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.fg-login-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.fg-login-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  color: white;
+  font-size: 25px;
+  background: linear-gradient(135deg, #ff512f, #f09819);
+  box-shadow: 0 10px 25px rgba(255, 81, 47, 0.22);
+}
+
+.fg-login-header h2 {
+  margin: 7px 0;
+  color: #111827;
+  font-size: 26px;
+}
+
+.fg-login-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Login Form */
+
+.fg-login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.fg-login-form > label {
+  margin-bottom: 7px;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.fg-input-wrapper {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 15px;
+  margin-bottom: 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 13px;
+  background: #f9fafb;
+  transition:
+    border 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.fg-input-wrapper svg {
+  color: #9ca3af;
+}
+
+.fg-input-wrapper:focus-within {
+  background: #fff;
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
+}
+
+.fg-input-wrapper input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #111827;
+  font-size: 14px;
+}
+
+.fg-input-wrapper input::placeholder {
+  color: #9ca3af;
+}
+
+.fg-login-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: -5px 0 20px;
+  font-size: 13px;
+}
+
+.fg-remember {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.fg-remember input {
+  accent-color: #ff512f;
+}
+
+.fg-login-options a {
+  color: #f05a28;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.fg-login-error {
+  margin: -5px 0 15px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #dc2626;
+  font-size: 13px;
+}
+
+.fg-login-submit {
+  width: 100%;
+  height: 52px;
+  border: none;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: white;
+  background: linear-gradient(135deg, #ff512f, #f09819);
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(255, 81, 47, 0.2);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.fg-login-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(255, 81, 47, 0.28);
+}
+
+/* Login Divider */
+
+.fg-login-divider {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 24px 0;
+}
+
+.fg-login-divider::before,
+.fg-login-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.fg-login-divider span {
+  color: #9ca3af;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Create Account */
+
+.fg-create-account {
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 13px;
+  border: 1px solid #e5e7eb;
+  color: #111827;
+  background: white;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.fg-create-account:hover {
+  border-color: #ff6b35;
+  color: #f05a28;
+  background: #fff8f5;
+}
+
+/* Guest Login */
+
+.fg-guest-login {
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.fg-guest-login:hover {
+  color: #111827;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .fg-account-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px;
+  }
+
+  .fg-account-left {
+    align-items: flex-start;
+  }
+
+  .fg-account-actions {
+    width: 100%;
+  }
+
+  .fg-account-login-btn,
+  .fg-account-register-btn,
+  .fg-account-logout-btn {
+    flex: 1;
+  }
+
+  .fg-login-modal {
+    padding: 25px 20px;
+    border-radius: 22px;
+  }
+
+  .fg-login-header h2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fg-account-left {
+    flex-direction: column;
+  }
+
+  .fg-account-actions {
+    flex-direction: column;
+  }
+
+  .fg-account-login-btn,
+  .fg-account-register-btn,
+  .fg-account-logout-btn {
+    width: 100%;
+  }
+
+  .fg-login-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* Google Map */
+
+.fg-google-map {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fg-google-map iframe {
+  display: block;
+}
+
+/* Success Message */
+
+.fg-inline-success {
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #eaf8ef;
+  color: #1f6b3a;
+}
+/* Full restaurant details saved from the Admin onboarding form */
+.restaurant-brand,
+.restaurant-description,
+.restaurant-address,
+.restaurant-contact,
+.restaurant-coordinates {
+  margin: 6px 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #555;
+}
+.restaurant-brand strong,
+.restaurant-address strong,
+.restaurant-contact strong,
+.restaurant-coordinates strong {
+  color: #222;
+}
+.restaurant-details {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+.restaurant-description {
+  color: #333;
+  font-weight: 500;
+}
+.restaurant-address {
+  word-break: break-word;
+}
+.restaurant-contact {
+  word-break: break-word;
+}
+.restaurant-coordinates {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Simple restaurant-card presentation: keep useful information without a long data block. */
+.restaurant-description-short {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.restaurant-card-location {
+  margin: 0 0 10px;
+  color: #666;
+  font-size: 0.92rem;
+}

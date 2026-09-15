@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap");
+
+/* =========================================================
+   ROOT / GLOBAL STYLES
+========================================================= */
+
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #171717;
+  background: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Form elements */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Text selection */
+::selection {
+  background: #ff5a1f;
+  color: #fff;
+}
+
+/* =========================================================
+   CITY PICKER
+========================================================= */
+
+.fg-city-picker {
+  margin: 18px 0 10px;
+  padding: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  background: #fff;
+}
+
+.fg-city-picker .fg-chip-row {
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   RESTAURANT BRANCH SWITCHER
+========================================================= */
+
+.fg-branch-switcher {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  margin: 24px 0;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  background: #fff;
+}
+
+.fg-branch-switcher h3 {
+  margin: 5px 0 0;
+}
+
+.fg-branch-switcher select {
+  min-width: 280px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+/* Restaurant branch text */
+.restaurant-branch {
+  margin: 4px 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+  .fg-branch-switcher {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .fg-branch-switcher select {
+    width: 100%;
+    min-width: 0;
+  }
+}

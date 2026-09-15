@@ -1,0 +1,16 @@
+{
+  "name": "foodgo-fullstack",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "install:all": "npm --prefix backend install && npm --prefix frontend install",
+    "seed": "node backend/seed.js",
+    "backend": "npm --prefix backend run dev",
+    "frontend": "npm --prefix frontend run dev",
+    "start": "node run-foodgo.mjs",
+    "build": "npm --prefix frontend run build",
+    "seed:reset-menu": "node backend/scripts/reset-menu.js",
+    "dedupe:restaurants": "npm --prefix backend run dedupe:restaurants",
+    "verify:menu-ownership": "node backend/scripts/verify-menu-ownership.js"
+  }
+}

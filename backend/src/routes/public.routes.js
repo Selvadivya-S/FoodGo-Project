@@ -1,0 +1,10 @@
+import { Router } from "express";
+import { listRestaurants, listCityMenu, listRestaurantLocations, getRestaurant, listMenu, listBranches } from "../controllers/restaurant.controller.js";
+const router = Router();
+router.get("/restaurants/locations", listRestaurantLocations);
+router.get("/restaurants", listRestaurants);
+router.get("/restaurants/menus", listCityMenu);
+router.get("/restaurants/:id", getRestaurant);
+router.get("/restaurants/:id/branches", listBranches);
+router.get("/restaurants/:restaurantId/menu", listMenu);
+export default router;

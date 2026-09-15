@@ -1,0 +1,1529 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@500;600;700;800;900&display=swap");
+:root {
+  --foodgo-orange:#ff5a1f;
+  --foodgo-orange-dark:#e94d17;
+  --foodgo-orange-light:#ff7a45;
+  --foodgo-orange-soft:#fff3ed;
+  --foodgo-black:#0d0d0d;
+  --foodgo-dark:#171717;
+  --foodgo-text:#333;
+  --foodgo-muted:#777;
+  --foodgo-light:#999;
+  --foodgo-border:rgba(20,20,20,.08);
+  --foodgo-white:#fff;
+  --navbar-height:82px;
+  --radius-sm:10px;
+  --radius-md:13px;
+  --radius-lg:17px;
+  --radius-xl:22px;
+  --shadow-soft:0 8px 30px rgba(0,0,0,.055);
+  --shadow-card:0 18px 55px rgba(0,0,0,.12);
+  --shadow-orange:0 12px 30px rgba(255,90,31,.20);
+}
+* {
+  box-sizing:border-box
+}
+.foodgo-navbar,.foodgo-navbar *,.foodgo-logo,.foodgo-logo * {
+  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+.foodgo-navbar button,.foodgo-navbar a {
+  -webkit-tap-highlight-color:transparent;
+}
+.foodgo-navbar {
+  position:sticky;
+  top:0;
+  z-index:1200;
+  width:100%;
+  background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(255,255,255,.94));
+  backdrop-filter:blur(24px) saturate(180%);
+  -webkit-backdrop-filter:blur(24px) saturate(180%);
+  border-bottom:1px solid rgba(20,20,20,.065);
+  box-shadow:0 8px 35px rgba(0,0,0,.035);
+  overflow:visible;
+}
+.foodgo-navbar::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:2px;
+  background:linear-gradient(90deg,transparent,rgba(255,90,31,.15) 15%,var(--foodgo-orange) 50%,rgba(255,90,31,.15) 85%,transparent);
+  opacity:.75;
+}
+.navbar-container {
+  width:min(1460px,calc(100% - 44px));
+  min-height:var(--navbar-height);
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  overflow:visible;
+}
+.foodgo-logo {
+  display:inline-flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:13px;
+  min-width:190px;
+  flex-shrink:0;
+  padding:5px 0;
+  color:var(--foodgo-black);
+  text-decoration:none;
+  white-space:nowrap;
+  overflow:visible;
+  position:relative;
+  z-index:100;
+  cursor:pointer;
+  isolation:isolate;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),filter .3s ease;
+}
+.foodgo-logo:hover {
+  transform:translateY(-2px)
+}
+.foodgo-logo:active {
+  transform:scale(.97)
+}
+.foodgo-logo .logo-icon {
+  width:58px;
+  height:58px;
+  min-width:58px;
+  min-height:58px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  flex-shrink:0;
+  border-radius:19px;
+  background:linear-gradient(145deg,#fff 0%,#fff8f4 48%,#fff0e9 100%);
+  border:1px solid rgba(255,91,31,.20);
+  box-shadow:0 12px 30px rgba(15,23,42,.10),0 4px 12px rgba(255,91,31,.12),inset 0 1px 0 rgba(255,255,255,.95);
+  overflow:visible;
+  isolation:isolate;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,border-color .35s ease;
+}
+.foodgo-logo .logo-icon::before {
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:21px;
+  background:linear-gradient(135deg,rgba(255,91,31,.45),rgba(255,126,61,.05),rgba(255,91,31,.30));
+  z-index:-1;
+  opacity:0;
+  filter:blur(8px);
+  transition:opacity .35s ease;
+}
+.foodgo-logo .logo-icon::after {
+  content:"";
+  position:absolute;
+  top:5px;
+  left:7px;
+  right:7px;
+  height:18px;
+  border-radius:50%;
+  background:linear-gradient(180deg,rgba(255,255,255,.90),rgba(255,255,255,0));
+  pointer-events:none;
+  z-index:3;
+}
+.foodgo-logo .logo-icon svg,.foodgo-logo .foodgo-mark {
+  width:39px!important;
+  height:39px!important;
+  min-width:39px!important;
+  min-height:39px!important;
+  max-width:39px!important;
+  max-height:39px!important;
+  display:block!important;
+  position:relative;
+  z-index:5;
+  overflow:visible;
+  opacity:1!important;
+  visibility:visible!important;
+  transition:transform .3s ease;
+}
+.foodgo-logo .logo-icon svg * {
+  vector-effect:non-scaling-stroke
+}
+.foodgo-logo .logo-speed-line {
+  position:absolute;
+  display:block;
+  height:2px;
+  border-radius:999px;
+  background:linear-gradient(90deg,rgba(255,91,31,0),rgba(255,91,31,.9));
+  pointer-events:none;
+  opacity:.65;
+  z-index:1;
+  transition:width .3s ease,opacity .3s ease;
+}
+.foodgo-logo .speed-one {
+  width:10px;
+  left:-5px;
+  top:20px
+}
+.foodgo-logo .speed-two {
+  width:7px;
+  left:-2px;
+  top:27px;
+  opacity:.4
+}
+.logo-text,.foodgo-logo .foodgo-name {
+  display:inline-flex;
+  align-items:baseline;
+  width:max-content;
+  min-width:max-content;
+  margin:0;
+  padding:0;
+  visibility:visible;
+  opacity:1;
+  overflow:visible;
+  white-space:nowrap;
+  position:relative;
+  z-index:5;
+  text-decoration:none;
+  transform:translateY(-1px);
+  font-family:"Poppins","Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:30px;
+  line-height:.95;
+  font-weight:950;
+  letter-spacing:-1.65px;
+  flex-shrink:0;
+}
+.logo-text {
+  color:#0b0b0b!important;
+  line-height:1;
+  font-weight:900;
+  transform:none;
+}
+.logo-text span {
+  color:#0b0b0b!important;
+  font-weight:900;
+  background:none!important;
+  -webkit-background-clip:initial!important;
+  -webkit-text-fill-color:#0b0b0b!important;
+  background-clip:initial!important;
+}
+.foodgo-logo .food-text {
+  color:#101828!important;
+  font-weight:950;
+  position:relative;
+  transition:color .25s ease,transform .25s ease;
+}
+.foodgo-logo .go-text {
+  position:relative;
+  font-weight:950;
+  background:linear-gradient(135deg,#ff4d16 0%,#ff5a1f 38%,#ff7135 72%,#ff3d00 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  color:transparent;
+  text-shadow:0 4px 18px rgba(255,90,31,.13);
+  transition:filter .25s ease,transform .25s ease;
+}
+.foodgo-logo .go-text::after {
+  content:"";
+  position:absolute;
+  right:-2px;
+  bottom:-5px;
+  width:19px;
+  height:3px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#ff4d16,#ff9a68);
+  opacity:0;
+  transform:translateX(-5px) scaleX(.5);
+  transform-origin:right;
+  transition:opacity .3s ease,transform .3s ease;
+}
+.foodgo-logo:hover .logo-icon {
+  transform:translateY(-2px) rotate(-2deg) scale(1.035);
+  border-color:rgba(255,91,31,.38);
+  box-shadow:0 17px 38px rgba(15,23,42,.14),0 8px 22px rgba(255,91,31,.18),inset 0 1px 0 #fff;
+}
+.foodgo-logo:hover .logo-icon::before {
+  opacity:1
+}
+.foodgo-logo:hover .logo-icon svg,.foodgo-logo:hover .foodgo-mark {
+  transform:rotate(-3deg) scale(1.05);
+}
+.foodgo-logo:hover .food-text {
+  color:#050b16!important
+}
+.foodgo-logo:hover .go-text {
+  filter:brightness(1.06) drop-shadow(0 5px 10px rgba(255,90,31,.16));
+  transform:translateX(1px);
+}
+.foodgo-logo:hover .go-text::after {
+  opacity:1;
+  transform:translateX(0) scaleX(1);
+}
+.foodgo-logo:hover .speed-one {
+  width:14px;
+  opacity:.9
+}
+.foodgo-logo:hover .speed-two {
+  width:10px;
+  opacity:.65
+}
+.foodgo-logo:focus-visible {
+  outline:3px solid rgba(255,90,31,.25);
+  outline-offset:5px;
+  border-radius:18px;
+}
+.foodgo-logo:focus-visible .logo-icon {
+  outline:3px solid rgba(255,90,31,.28);
+  outline-offset:4px;
+}
+.navbar-location {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  width:190px;
+  min-width:190px;
+  height:54px;
+  padding:8px 12px;
+  border:1px solid rgba(20,20,20,.08);
+  border-radius:16px;
+  background:linear-gradient(145deg,#fff,#fffdfc);
+  color:var(--foodgo-dark);
+  cursor:pointer;
+  text-align:left;
+  flex-shrink:0;
+  box-shadow:0 5px 18px rgba(0,0,0,.035);
+  transition:border-color .22s ease,box-shadow .22s ease,transform .22s ease,background .22s ease;
+}
+.navbar-location:hover {
+  border-color:rgba(255,90,31,.27);
+  background:linear-gradient(145deg,#fff,#fff8f4);
+  box-shadow:0 10px 28px rgba(255,90,31,.09);
+  transform:translateY(-1px);
+}
+.navbar-location:focus-visible {
+  outline:3px solid rgba(255,90,31,.22);
+  outline-offset:3px;
+}
+.location-pin {
+  width:34px;
+  height:34px;
+  min-width:34px;
+  display:grid;
+  place-items:center;
+  border-radius:11px;
+  background:linear-gradient(145deg,#fff2eb,#ffe8dc);
+  color:var(--foodgo-orange);
+  font-size:14px;
+  box-shadow:inset 0 0 0 1px rgba(255,90,31,.06);
+}
+.location-pin svg {
+  transition:transform .2s ease
+}
+.navbar-location:hover .location-pin svg {
+  transform:translateY(-1px) scale(1.08)
+}
+.location-copy {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:3px;
+  min-width:0;
+  flex:1;
+}
+.location-copy small {
+  display:block;
+  color:#a0a0a0;
+  font-size:7px;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+.location-copy strong {
+  display:block;
+  color:#222;
+  font-size:12px;
+  line-height:1.2;
+  font-weight:800;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.location-chevron {
+  margin-left:auto;
+  flex-shrink:0;
+  color:#999;
+  font-size:9px;
+  transition:transform .2s ease,color .2s ease;
+}
+.navbar-location:hover .location-chevron {
+  color:var(--foodgo-orange);
+  transform:translateY(1px);
+}
+.navbar-links {
+  display:flex;
+  align-items:center;
+  gap:25px;
+  margin-left:auto;
+  flex-shrink:1;
+  white-space:nowrap;
+}
+.navbar-links>a {
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:44px;
+  color:#5f5f5f;
+  font-size:13px;
+  font-weight:750;
+  text-decoration:none;
+  transition:color .2s ease,transform .2s ease;
+}
+.navbar-links>a:hover {
+  color:var(--foodgo-orange);
+  transform:translateY(-1px);
+}
+.navbar-links>a::after {
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:4px;
+  height:2px;
+  border-radius:99px;
+  background:linear-gradient(90deg,var(--foodgo-orange),var(--foodgo-orange-light));
+  transform:scaleX(0);
+  transform-origin:center;
+  transition:transform .23s ease;
+}
+.navbar-links>a:hover::after,.navbar-links>a.active::after {
+  transform:scaleX(1)
+}
+.dashboard-nav-wrap {
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+.dashboard-nav-trigger {
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  height:44px;
+  padding:0;
+  border:0;
+  background:transparent;
+  color:#5f5f5f;
+  font-family:inherit;
+  font-size:13px;
+  font-weight:750;
+  cursor:pointer;
+  transition:color .2s ease,transform .2s ease;
+}
+.dashboard-nav-trigger:hover,.dashboard-nav-trigger.open {
+  color:var(--foodgo-orange);
+  transform:translateY(-1px);
+}
+.dashboard-nav-trigger svg {
+  font-size:9px;
+  transition:transform .22s ease;
+}
+.dashboard-nav-trigger.open svg {
+  transform:rotate(180deg)
+}
+.dashboard-nav-trigger:focus-visible {
+  outline:3px solid rgba(255,90,31,.2);
+  outline-offset:4px;
+  border-radius:7px;
+}
+.dashboard-nav-dropdown {
+  position:absolute;
+  top:calc(100% + 15px);
+  right:-95px;
+  width:350px;
+  padding:11px;
+  border:1px solid rgba(20,20,20,.08);
+  border-radius:22px;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(22px) saturate(170%);
+  -webkit-backdrop-filter:blur(22px) saturate(170%);
+  box-shadow:0 25px 70px rgba(0,0,0,.15),0 5px 20px rgba(255,90,31,.06);
+  z-index:1300;
+  animation:dashboardDrop .2s cubic-bezier(.2,.8,.2,1) both;
+}
+.dashboard-nav-dropdown::before,.user-dropdown::before {
+  content:"";
+  position:absolute;
+  width:14px;
+  height:14px;
+  background:#fff;
+  border-left:1px solid rgba(20,20,20,.08);
+  border-top:1px solid rgba(20,20,20,.08);
+  transform:rotate(45deg);
+}
+.dashboard-nav-dropdown::before {
+  top:-7px;
+  right:115px;
+}
+.dashboard-nav-heading {
+  padding:10px 12px 12px
+}
+.dashboard-nav-heading span {
+  display:block;
+  color:var(--foodgo-orange);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.6px;
+}
+.dashboard-nav-heading small {
+  display:block;
+  margin-top:4px;
+  color:#949494;
+  font-size:10px;
+  font-weight:600;
+}
+.dashboard-nav-item {
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  width:100%;
+  min-height:66px;
+  padding:10px;
+  border-radius:15px;
+  color:#222;
+  text-decoration:none;
+  transition:background .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.dashboard-nav-item:hover {
+  background:linear-gradient(100deg,#fff4ef,#fffaf8);
+  transform:translateX(3px);
+  box-shadow:inset 3px 0 0 var(--foodgo-orange);
+}
+.dashboard-nav-item-icon {
+  width:44px;
+  height:44px;
+  min-width:44px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:linear-gradient(145deg,#f8f8f8,#f1f1f1);
+  font-size:20px;
+  flex-shrink:0;
+  transition:transform .2s ease,background .2s ease;
+}
+.dashboard-nav-item:hover .dashboard-nav-item-icon {
+  transform:scale(1.06);
+  background:#fff;
+}
+.dashboard-nav-item-copy {
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  flex:1;
+}
+.dashboard-nav-item-copy strong {
+  color:#202020;
+  font-size:13px;
+  font-weight:800;
+}
+.dashboard-nav-item-copy small {
+  margin-top:3px;
+  color:#999;
+  font-size:10px;
+  line-height:1.3;
+  font-weight:600;
+}
+.dashboard-nav-arrow {
+  color:#aaa;
+  font-size:18px;
+  transition:color .2s ease,transform .2s ease;
+}
+.dashboard-nav-item:hover .dashboard-nav-arrow {
+  color:var(--foodgo-orange);
+  transform:translateX(4px);
+}
+.dashboard-nav-note {
+  margin:7px 4px 3px;
+  padding:11px 12px;
+  border-radius:12px;
+  background:linear-gradient(145deg,#f8f8f8,#fbfbfb);
+  color:#858585;
+  font-size:10px;
+  line-height:1.5;
+  font-weight:600;
+}
+.navbar-actions {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-left:6px;
+  flex-shrink:0;
+}
+.navbar-icon-button,.navbar-cart {
+  width:43px;
+  height:43px;
+  display:grid;
+  place-items:center;
+  position:relative;
+  border:1px solid rgba(20,20,20,.08);
+  border-radius:13px;
+  background:linear-gradient(145deg,#fff,#fcfcfc);
+  color:#414141;
+  text-decoration:none;
+  cursor:pointer;
+  transition:color .2s ease,border-color .2s ease,background .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.navbar-icon-button:hover,.navbar-cart:hover {
+  color:var(--foodgo-orange);
+  border-color:rgba(255,90,31,.25);
+  background:#fffaf8;
+  transform:translateY(-2px);
+  box-shadow:0 9px 24px rgba(255,90,31,.10);
+}
+.navbar-icon-button:focus-visible,.navbar-cart:focus-visible {
+  outline:3px solid rgba(255,90,31,.22);
+  outline-offset:3px;
+}
+.navbar-cart span {
+  position:absolute;
+  top:-6px;
+  right:-6px;
+  min-width:20px;
+  height:20px;
+  padding:0 5px;
+  display:grid;
+  place-items:center;
+  border:2px solid #fff;
+  border-radius:99px;
+  background:linear-gradient(135deg,#ff4d12,#ff681f);
+  color:#fff;
+  font-size:8px;
+  line-height:1;
+  font-weight:900;
+  box-shadow:0 5px 12px rgba(255,90,31,.22);
+  animation:badgePop .3s ease both;
+}
+.navbar-auth {
+  display:flex;
+  align-items:center;
+  gap:5px;
+  flex-shrink:0;
+}
+.navbar-signin-link,.navbar-create-account {
+  height:43px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  padding:0 14px;
+  border-radius:12px;
+  font-size:11px;
+  font-weight:800;
+  white-space:nowrap;
+  text-decoration:none;
+  transition:background .2s ease,color .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.navbar-signin-link {
+  color:#333
+}
+.navbar-signin-link:hover {
+  color:var(--foodgo-orange);
+  background:var(--foodgo-orange-soft);
+}
+.navbar-create-account {
+  color:#fff;
+  background:linear-gradient(135deg,#ff4d12 0%,#ff681f 55%,#ff7540 100%);
+  box-shadow:0 9px 22px rgba(255,90,31,.22);
+}
+.navbar-create-account:hover {
+  color:#fff;
+  transform:translateY(-2px);
+  box-shadow:0 13px 28px rgba(255,90,31,.30);
+}
+.navbar-user {
+  position:relative;
+  flex-shrink:0;
+}
+.navbar-user-button {
+  height:45px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:4px 10px 4px 5px;
+  border:1px solid rgba(20,20,20,.08);
+  border-radius:14px;
+  background:#fff;
+  color:#222;
+  cursor:pointer;
+  transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;
+}
+.navbar-user-button:hover {
+  border-color:rgba(255,90,31,.25);
+  box-shadow:0 9px 24px rgba(0,0,0,.06);
+  transform:translateY(-1px);
+}
+.navbar-user-button:focus-visible {
+  outline:3px solid rgba(255,90,31,.22);
+  outline-offset:3px;
+}
+.navbar-avatar,.large-avatar {
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-weight:900;
+  background:linear-gradient(135deg,#ff4d12,#ff7b48);
+}
+.navbar-avatar {
+  width:34px;
+  height:34px;
+  min-width:34px;
+  border-radius:11px;
+  font-size:12px;
+  box-shadow:0 5px 14px rgba(255,90,31,.18);
+}
+.navbar-user-name {
+  max-width:105px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color:#252525;
+  font-size:11px;
+  font-weight:800;
+}
+.navbar-user-button>svg {
+  color:#999;
+  font-size:8px;
+  transition:transform .2s ease;
+}
+.navbar-user-button>svg.rotate {
+  transform:rotate(180deg)
+}
+.user-dropdown {
+  position:absolute;
+  top:calc(100% + 12px);
+  right:0;
+  width:285px;
+  padding:11px;
+  background:rgba(255,255,255,.98);
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
+  border:1px solid rgba(20,20,20,.08);
+  border-radius:20px;
+  box-shadow:0 25px 70px rgba(0,0,0,.15);
+  z-index:1400;
+  animation:dropdownIn .2s cubic-bezier(.2,.8,.2,1) both;
+}
+.user-dropdown::before {
+  top:-7px;
+  right:22px;
+}
+.user-dropdown-header {
+  display:flex;
+  align-items:center;
+  gap:11px;
+  padding:10px;
+}
+.large-avatar {
+  width:44px;
+  height:44px;
+  min-width:44px;
+  border-radius:13px;
+  font-size:14px;
+}
+.user-dropdown-header>div:last-child {
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  gap:3px;
+}
+.user-dropdown-header strong {
+  color:#202020;
+  font-size:12px;
+  font-weight:800;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.user-dropdown-header small {
+  color:#999;
+  font-size:9px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.dropdown-divider {
+  height:1px;
+  margin:7px 3px;
+  background:rgba(20,20,20,.075);
+}
+.user-dropdown a,.user-dropdown button {
+  width:100%;
+  min-height:41px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:0 11px;
+  border:0;
+  border-radius:11px;
+  background:transparent;
+  color:#555;
+  font-family:inherit;
+  font-size:11px;
+  font-weight:650;
+  text-decoration:none;
+  text-align:left;
+  cursor:pointer;
+  transition:background .18s ease,color .18s ease,transform .18s ease;
+}
+.user-dropdown a:hover,.user-dropdown button:hover {
+  background:linear-gradient(90deg,#fff3ed,#fff9f6);
+  color:var(--foodgo-orange);
+  transform:translateX(2px);
+}
+.user-dropdown a svg,.user-dropdown button svg {
+  width:15px;
+  min-width:15px;
+  color:var(--foodgo-orange);
+}
+.logout-dropdown,.logout-dropdown svg {
+  color:#d84235!important
+}
+.mobile-menu-button {
+  display:none;
+  width:43px;
+  height:43px;
+  min-width:43px;
+  place-items:center;
+  border:1px solid rgba(20,20,20,.08);
+  border-radius:13px;
+  background:#fff;
+  color:#333;
+  cursor:pointer;
+  transition:color .2s ease,background .2s ease,border-color .2s ease,transform .2s ease;
+}
+.mobile-menu-button:hover {
+  color:var(--foodgo-orange);
+  background:var(--foodgo-orange-soft);
+  border-color:rgba(255,90,31,.22);
+  transform:translateY(-1px);
+}
+.mobile-menu-button:focus-visible {
+  outline:3px solid rgba(255,90,31,.22);
+  outline-offset:3px;
+}
+.location-overlay {
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  display:grid;
+  place-items:center;
+  padding:20px;
+  background:rgba(8,8,8,.50);
+  backdrop-filter:blur(9px);
+  -webkit-backdrop-filter:blur(9px);
+  animation:overlayIn .2s ease both;
+}
+.location-modal {
+  width:min(540px,100%);
+  position:relative;
+  padding:32px;
+  background:linear-gradient(145deg,#fff,#fffdfc);
+  border:1px solid rgba(20,20,20,.07);
+  border-radius:27px;
+  box-shadow:0 40px 110px rgba(0,0,0,.27),0 10px 35px rgba(255,90,31,.06);
+  animation:modalIn .25s cubic-bezier(.2,.8,.2,1) both;
+}
+.location-close {
+  position:absolute;
+  top:17px;
+  right:17px;
+  width:37px;
+  height:37px;
+  display:grid;
+  place-items:center;
+  border:0;
+  border-radius:50%;
+  background:#f5f5f5;
+  color:#666;
+  cursor:pointer;
+  transition:background .2s ease,color .2s ease,transform .25s ease;
+}
+.location-close:hover {
+  background:var(--foodgo-orange-soft);
+  color:var(--foodgo-orange);
+  transform:rotate(90deg);
+}
+.location-close:focus-visible {
+  outline:3px solid rgba(255,90,31,.22);
+  outline-offset:3px;
+}
+.location-modal-icon {
+  width:56px;
+  height:56px;
+  display:grid;
+  place-items:center;
+  margin-bottom:17px;
+  border-radius:17px;
+  background:linear-gradient(145deg,#fff0e8,#ffe5d8);
+  color:var(--foodgo-orange);
+  font-size:20px;
+  box-shadow:inset 0 0 0 1px rgba(255,90,31,.07);
+}
+.location-kicker {
+  display:block;
+  margin-bottom:7px;
+  color:var(--foodgo-orange);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.7px;
+  text-transform:uppercase;
+}
+.location-modal h2 {
+  margin:0 0 9px;
+  color:var(--foodgo-black);
+  font-family:"Poppins","Inter",sans-serif;
+  font-size:28px;
+  line-height:1.15;
+  font-weight:800;
+  letter-spacing:-1px;
+}
+.location-modal p {
+  margin:0 0 19px;
+  color:#777;
+  font-size:12px;
+  line-height:1.7;
+}
+.detect-location {
+  width:100%;
+  height:47px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin-bottom:17px;
+  border:1px solid #ffd0bc;
+  border-radius:13px;
+  background:linear-gradient(145deg,#fff9f6,#fff2ec);
+  color:var(--foodgo-orange-dark);
+  font-family:inherit;
+  font-size:11px;
+  font-weight:800;
+  cursor:pointer;
+  transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.detect-location:hover {
+  background:#fff0e9;
+  border-color:#ffab8a;
+  transform:translateY(-1px);
+  box-shadow:0 8px 20px rgba(255,90,31,.08);
+}
+.detect-location:focus-visible {
+  outline:3px solid rgba(255,90,31,.22);
+  outline-offset:3px;
+}
+.location-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:9px;
+}
+.location-grid button {
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:0 11px;
+  border:1px solid #eee;
+  border-radius:13px;
+  background:#fff;
+  color:#444;
+  font-family:inherit;
+  font-size:10px;
+  font-weight:700;
+  cursor:pointer;
+  text-align:left;
+  transition:border-color .2s ease,background .2s ease,color .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.location-grid button:hover,.location-grid button.selected {
+  border-color:#ff9c77;
+  background:linear-gradient(145deg,#fff7f3,#fff0e9);
+  color:var(--foodgo-orange-dark);
+  transform:translateY(-2px);
+  box-shadow:0 7px 18px rgba(255,90,31,.08);
+}
+.location-grid button svg {
+  color:var(--foodgo-orange);
+  font-size:10px;
+  flex-shrink:0;
+}
+.location-grid button b {
+  margin-left:auto;
+  color:var(--foodgo-orange);
+  font-size:12px;
+}
+.location-note {
+  display:block;
+  margin-top:16px;
+  color:#aaa;
+  font-size:9px;
+  line-height:1.5;
+  text-align:center;
+}
+@keyframes dashboardDrop {
+  from {
+    opacity:0;
+    transform:translateY(-8px) scale(.975)
+  }
+  to {
+    opacity:1;
+    transform:translateY(0) scale(1)
+  }
+}
+@keyframes dropdownIn {
+  from {
+    opacity:0;
+    transform:translateY(-7px) scale(.98)
+  }
+  to {
+    opacity:1;
+    transform:translateY(0) scale(1)
+  }
+}
+@keyframes modalIn {
+  from {
+    opacity:0;
+    transform:translateY(12px) scale(.97)
+  }
+  to {
+    opacity:1;
+    transform:translateY(0) scale(1)
+  }
+}
+@keyframes overlayIn {
+  from {
+    opacity:0
+  }
+  to {
+    opacity:1
+  }
+}
+@keyframes badgePop {
+  from {
+    opacity:0;
+    transform:scale(.5)
+  }
+  70% {
+    transform:scale(1.12)
+  }
+  to {
+    opacity:1;
+    transform:scale(1)
+  }
+}
+@media(max-width:1280px) {
+  .navbar-container {
+    width:min(calc(100% - 32px),1200px);
+    gap:15px;
+  }
+  .foodgo-logo {
+    min-width:175px
+  }
+  .logo-text {
+    font-size:27px
+  }
+  .navbar-location {
+    width:170px;
+    min-width:170px
+  }
+  .navbar-links {
+    gap:18px
+  }
+  .navbar-links>a,.dashboard-nav-trigger {
+    font-size:12px
+  }
+  .navbar-signin-link,.navbar-create-account {
+    padding:0 11px
+  }
+}
+@media(max-width:1080px) {
+  .navbar-container {
+    min-height:76px;
+    width:calc(100% - 28px);
+    gap:11px;
+  }
+  .foodgo-logo {
+    min-width:155px;
+    gap:9px
+  }
+  .logo-icon,.foodgo-logo .logo-icon {
+    width:50px;
+    height:50px;
+    min-width:50px;
+    min-height:50px;
+    border-radius:15px;
+  }
+  .logo-icon svg,.logo-icon .foodgo-mark,.foodgo-logo .logo-icon svg,.foodgo-logo .foodgo-mark {
+    width:33px!important;
+    height:33px!important;
+    min-width:33px!important;
+    min-height:33px!important;
+  }
+  .logo-text {
+    font-size:24px;
+    letter-spacing:-1.25px
+  }
+  .foodgo-logo .foodgo-name {
+    font-size:24px;
+    letter-spacing:-1.25px
+  }
+  .navbar-location {
+    width:155px;
+    min-width:155px;
+    height:49px;
+  }
+  .navbar-links {
+    gap:12px
+  }
+  .navbar-links>a,.dashboard-nav-trigger {
+    font-size:11px
+  }
+  .navbar-signin-link span,.navbar-create-account span {
+    display:none
+  }
+  .navbar-signin-link,.navbar-create-account {
+    width:42px;
+    padding:0;
+  }
+  .dashboard-nav-dropdown {
+    right:-45px
+  }
+}
+@media(max-width:900px) {
+  .navbar-container {
+    min-height:70px;
+    width:calc(100% - 22px);
+    gap:9px;
+  }
+  .foodgo-logo {
+    min-width:auto;
+    gap:8px;
+  }
+  .logo-icon,.foodgo-logo .logo-icon {
+    width:47px;
+    height:47px;
+    min-width:47px;
+    min-height:47px;
+    border-radius:14px;
+  }
+  .logo-icon svg,.logo-icon .foodgo-mark,.foodgo-logo .logo-icon svg,.foodgo-logo .foodgo-mark {
+    width:31px!important;
+    height:31px!important;
+    min-width:31px!important;
+    min-height:31px!important;
+  }
+  .logo-text {
+    font-size:22px;
+    letter-spacing:-1px
+  }
+  .foodgo-logo .foodgo-name {
+    font-size:22px;
+    letter-spacing:-1px
+  }
+  .navbar-location {
+    flex:1;
+    width:auto;
+    min-width:0;
+    max-width:190px;
+    height:46px;
+  }
+  .navbar-links {
+    display:none;
+    position:absolute;
+    top:calc(100% + 8px);
+    left:10px;
+    right:10px;
+    width:auto;
+    margin:0;
+    padding:11px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:3px;
+    background:rgba(255,255,255,.98);
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+    border:1px solid rgba(20,20,20,.08);
+    border-radius:19px;
+    box-shadow:0 25px 60px rgba(0,0,0,.13);
+    z-index:1300;
+  }
+  .navbar-links.mobile-open {
+    display:flex
+  }
+  .navbar-links>a {
+    width:100%;
+    height:47px;
+    justify-content:flex-start;
+    padding:0 13px;
+    border-radius:11px;
+    font-size:12px;
+  }
+  .navbar-links>a:hover {
+    background:var(--foodgo-orange-soft)
+  }
+  .navbar-links>a::after {
+    display:none
+  }
+  .dashboard-nav-wrap {
+    width:100%
+  }
+  .dashboard-nav-trigger {
+    width:100%;
+    height:47px;
+    justify-content:space-between;
+    padding:0 13px;
+    border-radius:11px;
+    font-size:12px;
+  }
+  .dashboard-nav-trigger:hover,.dashboard-nav-trigger.open {
+    background:var(--foodgo-orange-soft);
+  }
+  .dashboard-nav-dropdown {
+    position:static;
+    width:100%;
+    margin:3px 0 7px;
+    box-shadow:none;
+    border-radius:15px;
+  }
+  .dashboard-nav-dropdown::before {
+    display:none
+  }
+  .navbar-icon-button {
+    display:none
+  }
+  .navbar-actions {
+    margin-left:auto;
+    gap:5px;
+  }
+  .mobile-menu-button {
+    display:grid
+  }
+}
+@media(max-width:700px) {
+  .foodgo-logo {
+    gap:10px
+  }
+  .foodgo-logo .logo-icon {
+    width:48px;
+    height:48px;
+    min-width:48px;
+    min-height:48px;
+    border-radius:16px;
+  }
+  .foodgo-logo .logo-icon::before {
+    border-radius:18px
+  }
+  .foodgo-logo .logo-icon svg,.foodgo-logo .foodgo-mark {
+    width:32px!important;
+    height:32px!important;
+    min-width:32px!important;
+    min-height:32px!important;
+    max-width:32px!important;
+    max-height:32px!important;
+  }
+  .foodgo-logo .foodgo-name {
+    font-size:25px;
+    letter-spacing:-1.3px;
+  }
+  .foodgo-logo .logo-speed-line {
+    transform:scale(.85)
+  }
+}
+@media(max-width:680px) {
+  .navbar-container {
+    width:calc(100% - 16px);
+    min-height:66px;
+    gap:7px;
+  }
+  .foodgo-logo {
+    gap:7px
+  }
+  .logo-icon,.foodgo-logo .logo-icon {
+    width:45px;
+    height:45px;
+    min-width:45px;
+    min-height:45px;
+    border-radius:13px;
+  }
+  .logo-icon svg,.logo-icon .foodgo-mark,.foodgo-logo .logo-icon svg,.foodgo-logo .foodgo-mark {
+    width:29px!important;
+    height:29px!important;
+    min-width:29px!important;
+    min-height:29px!important;
+  }
+  .logo-text {
+    font-size:20px;
+    letter-spacing:-.85px
+  }
+  .foodgo-logo .foodgo-name {
+    font-size:20px;
+    letter-spacing:-.85px
+  }
+  .navbar-location {
+    max-width:155px;
+    height:42px;
+    padding:6px 8px;
+    border-radius:12px;
+    gap:7px;
+  }
+  .location-pin {
+    width:29px;
+    height:29px;
+    min-width:29px;
+    border-radius:9px;
+    font-size:12px;
+  }
+  .location-copy small {
+    font-size:5.5px;
+    letter-spacing:.8px;
+  }
+  .location-copy strong {
+    font-size:10px;
+    max-width:65px;
+  }
+  .location-chevron {
+    font-size:7px
+  }
+  .navbar-cart {
+    width:39px;
+    height:39px;
+    border-radius:11px;
+  }
+  .navbar-user-button {
+    width:39px;
+    height:39px;
+    padding:3px;
+    border-radius:11px;
+  }
+  .navbar-user-name,.navbar-user-button>svg {
+    display:none
+  }
+  .navbar-avatar {
+    width:31px;
+    height:31px;
+    min-width:31px;
+    border-radius:9px;
+  }
+  .mobile-menu-button {
+    width:39px;
+    height:39px;
+    min-width:39px;
+    border-radius:11px;
+  }
+  .user-dropdown {
+    width:min(285px,calc(100vw - 20px));
+  }
+  .location-modal {
+    padding:27px 20px;
+    border-radius:22px;
+  }
+  .location-modal h2 {
+    font-size:24px
+  }
+  .location-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+@media(max-width:500px) {
+  .navbar-container {
+    width:calc(100% - 12px);
+    gap:5px;
+  }
+  .foodgo-logo {
+    gap:6px
+  }
+  .logo-icon,.foodgo-logo .logo-icon {
+    width:42px;
+    height:42px;
+    min-width:42px;
+    min-height:42px;
+    border-radius:12px;
+  }
+  .logo-icon svg,.logo-icon .foodgo-mark,.foodgo-logo .logo-icon svg,.foodgo-logo .foodgo-mark {
+    width:27px!important;
+    height:27px!important;
+    min-width:27px!important;
+    min-height:27px!important;
+  }
+  .logo-text {
+    font-size:18px;
+    letter-spacing:-.7px
+  }
+  .foodgo-logo .foodgo-name {
+    font-size:18px;
+    letter-spacing:-.7px
+  }
+  .navbar-location {
+    max-width:130px;
+    height:39px;
+    padding:5px 6px;
+  }
+  .location-pin {
+    width:26px;
+    height:26px;
+    min-width:26px;
+    border-radius:8px;
+  }
+  .location-copy small {
+    font-size:5px;
+    letter-spacing:.6px;
+  }
+  .location-copy strong {
+    font-size:9px;
+    max-width:55px;
+  }
+  .navbar-cart,.navbar-user-button,.mobile-menu-button {
+    width:36px;
+    height:36px;
+    min-width:36px;
+  }
+  .navbar-avatar {
+    width:28px;
+    height:28px;
+    min-width:28px;
+  }
+  .navbar-cart span {
+    top:-5px;
+    right:-5px;
+    min-width:18px;
+    height:18px;
+    font-size:7px;
+  }
+  .location-modal {
+    padding:25px 16px
+  }
+  .location-modal h2 {
+    font-size:22px
+  }
+  .location-grid button {
+    min-height:44px;
+    padding:0 9px;
+    font-size:9px;
+  }
+}
+@media(max-width:480px) {
+  .foodgo-logo {
+    gap:8px
+  }
+  .foodgo-logo .logo-icon {
+    width:43px;
+    height:43px;
+    min-width:43px;
+    min-height:43px;
+    border-radius:14px;
+  }
+  .foodgo-logo .logo-icon::before {
+    border-radius:16px
+  }
+  .foodgo-logo .logo-icon svg,.foodgo-logo .foodgo-mark {
+    width:28px!important;
+    height:28px!important;
+    min-width:28px!important;
+    min-height:28px!important;
+    max-width:28px!important;
+    max-height:28px!important;
+  }
+  .foodgo-logo .foodgo-name {
+    font-size:22px;
+    letter-spacing:-1.05px;
+  }
+  .foodgo-logo .speed-one {
+    left:-4px;
+    width:7px;
+  }
+  .foodgo-logo .speed-two {
+    left:-2px;
+    width:5px;
+  }
+}
+@media(max-width:390px) {
+  .navbar-container {
+    width:calc(100% - 8px);
+    gap:4px;
+  }
+  .logo-icon,.foodgo-logo .logo-icon {
+    width:38px;
+    height:38px;
+    min-width:38px;
+    min-height:38px;
+    border-radius:11px;
+  }
+  .logo-icon svg,.logo-icon .foodgo-mark,.foodgo-logo .logo-icon svg,.foodgo-logo .foodgo-mark {
+    width:24px!important;
+    height:24px!important;
+    min-width:24px!important;
+    min-height:24px!important;
+  }
+  .logo-text {
+    font-size:16px;
+    letter-spacing:-.55px
+  }
+  .foodgo-logo .foodgo-name {
+    font-size:16px;
+    letter-spacing:-.55px
+  }
+  .navbar-location {
+    max-width:112px
+  }
+  .location-copy strong {
+    max-width:45px
+  }
+  .navbar-cart,.navbar-user-button,.mobile-menu-button {
+    width:34px;
+    height:34px;
+    min-width:34px;
+  }
+  .navbar-avatar {
+    width:26px;
+    height:26px;
+    min-width:26px;
+  }
+}
+.foodgo-logo,.foodgo-logo *,.logo-icon,.logo-icon *,.logo-text {
+  overflow:visible;
+}
+.foodgo-logo {
+  isolation:isolate
+}
+.logo-text {
+  position:relative;
+  z-index:5
+}
+.foodgo-logo:focus-visible,.navbar-location:focus-visible,.navbar-links a:focus-visible,.navbar-cart:focus-visible,.navbar-icon-button:focus-visible,.navbar-signin-link:focus-visible,.navbar-create-account:focus-visible,.navbar-user-button:focus-visible,.mobile-menu-button:focus-visible,.location-grid button:focus-visible {
+  outline:3px solid rgba(255,90,31,.25);
+  outline-offset:3px;
+}
+@media(prefers-reduced-motion:reduce) {
+  .foodgo-navbar *,.foodgo-navbar *::before,.foodgo-navbar *::after {
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    scroll-behavior:auto!important;
+    transition-duration:.01ms!important;
+  }
+  .foodgo-logo,.foodgo-logo .logo-icon,.foodgo-logo .food-text,.foodgo-logo .go-text,.foodgo-logo .go-text::after {
+    transition:none!important;
+  }
+}
+@media(hover:none) {
+  .foodgo-logo:hover,.foodgo-logo:hover .logo-icon,.foodgo-logo:hover .logo-icon svg,.foodgo-logo:hover .foodgo-mark,.navbar-location:hover,.navbar-icon-button:hover,.navbar-cart:hover,.navbar-user-button:hover {
+    transform:none;
+  }
+}
+@media print {
+  .foodgo-navbar {
+    position:static;
+    box-shadow:none;
+    border-bottom:1px solid #ddd;
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+  }
+  .navbar-actions,.mobile-menu-button,.navbar-links,.navbar-location {
+    display:none!important;
+  }
+}

@@ -1,0 +1,17 @@
+import { Router } from "express";
+import { authenticate } from "../middleware/auth.js";
+import { allowRoles } from "../middleware/roles.js";
+import { deliveryDashboard } from "../controllers/dashboard.controller.js";
+import { listNotifications, markRead } from "../controllers/notification.controller.js";
+import { deliveryAnalytics } from "../controllers/analytics.controller.js";
+import { myDeliveries, updateLocation, updateDeliveryStatus } from "../controllers/delivery.controller.js";
+const router = Router();
+router.use(authenticate, allowRoles("delivery_partner"));
+router.get("/dashboard", deliveryDashboard);
+router.get("/analytics", deliveryAnalytics);
+router.get("/notifications", listNotifications);
+router.patch("/notifications/:id/read", markRead);
+router.get("/deliveries", myDeliveries);
+router.patch("/deliveries/status", updateDeliveryStatus);
+router.post("/location", updateLocation);
+export default router;

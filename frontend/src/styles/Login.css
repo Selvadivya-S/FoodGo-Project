@@ -1,0 +1,1109 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap");
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.foodgo-login-page,
+.foodgo-login-page * {
+  box-sizing: border-box;
+}
+
+.foodgo-login-page {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 48% 52%;
+  background: #ffffff;
+  font-family: "Inter", sans-serif;
+  color: #151515;
+  overflow: hidden;
+}
+
+/* =========================================================
+   BRAND PANEL
+========================================================= */
+
+.login-brand-panel {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 36px 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 82, 0, 0.95),
+      rgba(230, 55, 0, 0.96)
+    ),
+    url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1500&q=85");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.brand-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 255, 255, 0.15),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.08),
+      rgba(0, 0, 0, 0.25)
+    );
+  pointer-events: none;
+}
+
+.brand-header {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.foodgo-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.foodgo-logo > span:last-child span {
+  color: #ffe4d6;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  font-size: 22px;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.16),
+    0 0 0 6px rgba(255, 255, 255, 0.08);
+  color: #ff5a1f;
+}
+
+.logo-icon .foodgo-mark {
+  width: 29px;
+  height: 29px;
+  display: block;
+  transition: transform 0.28s ease;
+}
+
+.foodgo-logo:hover .foodgo-mark {
+  transform: rotate(-4deg) scale(1.06);
+}
+
+.brand-home-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.brand-home-link:hover {
+  color: white;
+  transform: translateX(-3px);
+}
+
+/* =========================================================
+   BRAND CONTENT
+========================================================= */
+
+.brand-content {
+  position: relative;
+  z-index: 3;
+  max-width: 580px;
+  margin-top: auto;
+  margin-bottom: 100px;
+}
+
+.live-badge {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 14px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.live-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #62ff89;
+  box-shadow: 0 0 0 5px rgba(98, 255, 137, 0.12);
+  animation: livePulse 1.7s infinite;
+}
+
+@keyframes livePulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px rgba(98, 255, 137, 0.12);
+  }
+
+  50% {
+    box-shadow: 0 0 0 9px rgba(98, 255, 137, 0.03);
+  }
+}
+
+.brand-content h1 {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1.03;
+  letter-spacing: -3px;
+  font-weight: 800;
+}
+
+.brand-content h1 span {
+  color: #ffe5d8;
+}
+
+.brand-content > p {
+  max-width: 510px;
+  margin: 25px 0 34px;
+  color: rgba(255, 255, 255, 0.83);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   BRAND BENEFITS
+========================================================= */
+
+.brand-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.brand-benefit {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.benefit-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  font-size: 16px;
+}
+
+.brand-benefit div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.brand-benefit strong {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.brand-benefit span {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+/* =========================================================
+   FLOATING ORDER CARD
+========================================================= */
+
+.floating-order-card {
+  position: absolute;
+  z-index: 10;
+  right: 42px;
+  bottom: 38px;
+  width: 310px;
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+  animation: floatingCard 4s ease-in-out infinite;
+}
+
+@keyframes floatingCard {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+.floating-food-image {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.floating-food-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.floating-order-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.floating-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #9affb3;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.floating-status span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #70ff91;
+}
+
+.floating-order-info > strong {
+  font-size: 13px;
+}
+
+.floating-meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 11px;
+}
+
+.floating-meta svg {
+  color: #ffd21c;
+}
+
+.floating-check {
+  margin-left: auto;
+  color: #6aff91;
+  font-size: 19px;
+}
+
+/* =========================================================
+   DECORATIVE CIRCLES
+========================================================= */
+
+.brand-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.circle-one {
+  width: 500px;
+  height: 500px;
+  right: -220px;
+  top: 80px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.circle-two {
+  width: 350px;
+  height: 350px;
+  left: -190px;
+  bottom: -150px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* =========================================================
+   LOGIN FORM PANEL
+========================================================= */
+
+.login-form-panel {
+  min-height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 45px 70px;
+  background: #ffffff;
+}
+
+.login-form-wrapper {
+  width: 100%;
+  max-width: 470px;
+}
+
+.mobile-logo {
+  display: none;
+}
+
+/* =========================================================
+   LOGIN HEADER
+========================================================= */
+
+.login-header {
+  margin-bottom: 28px;
+}
+
+.welcome-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 17px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: #fff1eb;
+  color: #ff5200;
+  font-size: 18px;
+}
+
+.login-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #ff5200;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.login-header h2 {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #141414;
+  font-size: 34px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.login-header p {
+  margin: 10px 0 0;
+  color: #777;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   LOGIN MESSAGE
+========================================================= */
+
+.login-message {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  background: #ecfff2;
+  border: 1px solid #c9f4d6;
+  color: #198b42;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   LOGIN FORM
+========================================================= */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-field label {
+  color: #282828;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.forgot-password {
+  border: none;
+  padding: 0;
+  background: transparent;
+  color: #ff5200;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.login-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.field-icon {
+  position: absolute;
+  left: 17px;
+  color: #a0a0a0;
+  font-size: 14px;
+  pointer-events: none;
+  transition: 0.25s ease;
+}
+
+.login-input-wrapper input {
+  width: 100%;
+  height: 54px;
+  padding: 0 48px;
+  border: 1px solid #e4e4e4;
+  outline: none;
+  border-radius: 14px;
+  background: #fafafa;
+  color: #171717;
+  font-family: inherit;
+  font-size: 13px;
+  transition:
+    border 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.login-input-wrapper input::placeholder {
+  color: #a7a7a7;
+}
+
+.login-input-wrapper input:focus {
+  border-color: #ff6a26;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(255, 82, 0, 0.08);
+}
+
+.login-input-wrapper:focus-within .field-icon {
+  color: #ff5200;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  display: grid;
+  place-items: center;
+  border: none;
+  background: transparent;
+  color: #999;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.password-toggle:hover {
+  color: #ff5200;
+}
+
+/* =========================================================
+   FIELD ERRORS
+========================================================= */
+
+.field-error .login-input-wrapper input {
+  border-color: #ff4b4b;
+  background: #fff8f8;
+}
+
+.error-text {
+  color: #e83c3c;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   PASSWORD STRENGTH
+========================================================= */
+
+.password-strength {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.strength-bars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.strength-bars span {
+  height: 3px;
+  border-radius: 999px;
+  background: #e8e8e8;
+  transition: 0.25s ease;
+}
+
+.strength-bars span.active {
+  background: #ff5200;
+}
+
+.password-strength small {
+  color: #888;
+  font-size: 10px;
+}
+
+.password-strength strong {
+  color: #555;
+}
+
+/* =========================================================
+   LOGIN OPTIONS
+========================================================= */
+
+.login-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.remember-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666 !important;
+  cursor: pointer;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+.remember-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.custom-checkbox {
+  width: 17px;
+  height: 17px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  color: transparent;
+  transition: 0.2s ease;
+}
+
+.remember-option input:checked + .custom-checkbox {
+  border-color: #ff5200;
+  background: #ff5200;
+  color: white;
+}
+
+.custom-checkbox svg {
+  font-size: 10px;
+}
+
+.secure-login {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #7b7b7b;
+  font-size: 11px;
+}
+
+.secure-login svg {
+  color: #36a85d;
+}
+
+/* =========================================================
+   LOGIN SUBMIT BUTTON
+========================================================= */
+
+.login-submit-button {
+  width: 100%;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  margin-top: 3px;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #ff5a0a, #ff3d00);
+  color: white;
+  box-shadow: 0 12px 25px rgba(255, 82, 0, 0.22);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.login-submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(255, 82, 0, 0.3);
+}
+
+.login-submit-button:active {
+  transform: translateY(0);
+}
+
+.login-submit-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+/* =========================================================
+   LOGIN SPINNER
+========================================================= */
+
+.login-spinner {
+  width: 17px;
+  height: 17px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   LOGIN DIVIDER
+========================================================= */
+
+.login-divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 27px 0 18px;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #ededed;
+}
+
+.login-divider span {
+  padding: 0 12px;
+  color: #aaa;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* =========================================================
+   SOCIAL LOGIN
+========================================================= */
+
+.social-login-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.social-button {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  background: white;
+  color: #333;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border 0.2s ease;
+}
+
+.social-button:hover {
+  transform: translateY(-2px);
+  border-color: #d4d4d4;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+.social-button svg {
+  font-size: 14px;
+}
+
+.social-button.google svg {
+  color: #db4437;
+}
+
+.social-button.facebook svg {
+  color: #1877f2;
+}
+
+.social-button.apple svg {
+  color: #111;
+}
+
+/* =========================================================
+   DEMO LOGIN
+========================================================= */
+
+.demo-login-button {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 12px;
+  border: 1px dashed #ffc6ad;
+  border-radius: 12px;
+  background: #fffaf7;
+  color: #e94e08;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  transition: 0.25s ease;
+}
+
+.demo-login-button:hover {
+  background: #fff2eb;
+  border-color: #ff9d72;
+}
+
+/* =========================================================
+   REGISTER SECTION
+========================================================= */
+
+.register-section {
+  margin-top: 27px;
+  text-align: center;
+}
+
+.register-section p {
+  margin: 0 0 7px;
+  color: #999;
+  font-size: 12px;
+}
+
+.register-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #ff5200;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.register-link svg {
+  font-size: 10px;
+  transition: 0.2s ease;
+}
+
+.register-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   SECURITY
+========================================================= */
+
+.login-security {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 24px;
+  color: #a0a0a0;
+  font-size: 10px;
+  text-align: center;
+}
+
+.login-security svg {
+  color: #48a866;
+}
+
+/* =========================================================
+   DEMO ACCOUNTS
+========================================================= */
+
+.demo-accounts {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid rgba(20, 20, 20, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.demo-accounts-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #222;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.demo-accounts-title svg {
+  color: #ff5a1f;
+}
+
+.demo-role-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.demo-role-button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  padding: 11px 12px;
+  border: 1px solid rgba(20, 20, 20, 0.08);
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.demo-role-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 90, 31, 0.4);
+  box-shadow: 0 8px 22px rgba(20, 20, 20, 0.08);
+}
+
+.demo-role-button strong {
+  color: #202020;
+  font-size: 12px;
+}
+
+.demo-role-button small {
+  width: 100%;
+  overflow: hidden;
+  color: #888;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   LOGO SVG
+========================================================= */
+
+.foodgo-login-page .logo-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .foodgo-login-page {
+    grid-template-columns: 44% 56%;
+  }
+
+  .login-brand-panel {
+    padding: 30px 35px;
+  }
+
+  .login-form-panel {
+    padding: 40px;
+  }
+
+  .brand-content h1 {
+    font-size: 48px;
+  }
+
+  .floating-order-card {
+    right: 25px;
+    bottom: 25px;
+    width: 280px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+  .foodgo-login-page {
+    display: block;
+    min-height: 100vh;
+  }
+
+  .login-brand-panel {
+    display: none;
+  }
+
+  .login-form-panel {
+    min-height: 100vh;
+    padding: 30px 20px;
+    align-items: flex-start;
+  }
+
+  .login-form-wrapper {
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .mobile-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 38px;
+  }
+
+  .mobile-logo .foodgo-logo {
+    color: #151515;
+  }
+
+  .mobile-logo .foodgo-logo > span:last-child span {
+    color: #ff5200;
+  }
+
+  .mobile-logo .logo-icon {
+    background: #fff1eb;
+  }
+
+  .login-header {
+    text-align: center;
+  }
+
+  .welcome-icon {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .login-header h2 {
+    font-size: 29px;
+  }
+
+  .social-login-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .social-button {
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+  .demo-role-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .login-form-panel {
+    padding: 25px 16px;
+  }
+
+  .login-header h2 {
+    font-size: 26px;
+  }
+
+  .login-options {
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .secure-login {
+    display: none;
+  }
+
+  .login-input-wrapper input {
+    height: 52px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
